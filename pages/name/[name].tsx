@@ -47,9 +47,9 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
     // }),
     paths: [
       // String variant:
-      '/name/1',
+      '/name/first-post',
       // Object variant:
-      { params: { name: '2' } },
+      { params: { name: 'second-post' } },
     ],
     fallback: false
     // fallback: 'blocking'
