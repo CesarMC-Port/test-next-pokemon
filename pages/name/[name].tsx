@@ -34,17 +34,23 @@ const PokemonByNamePage: NextPage<Props> = ({ blog }) => {
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
-  const {data} = await httpClient('/public/blogpost?page=1');
+  // const {data} = await httpClient('/public/blogpost?page=1');
   const response = await fetchClient("GET","public/blogpost?page=1");
   console.log(response)
 
   return {
-    paths: data?.blogsPosts?.map((e:any) => {
-      return {
-          // params: {name: `${e.title.replaceAll(' ', '-').substring(0,10)}`}
-          params: {name: `${e.id}`}
-      }
-    }),
+    // paths: data?.blogsPosts?.map((e:any) => {
+    //   return {
+    //       // params: {name: `${e.title.replaceAll(' ', '-').substring(0,10)}`}
+    //       params: {name: `${e.id}`}
+    //   }
+    // }),
+    paths: [
+      // String variant:
+      '/name/1',
+      // Object variant:
+      { params: { name: '2' } },
+    ],
     fallback: false
     // fallback: 'blocking'
   }
