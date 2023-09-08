@@ -6,7 +6,7 @@ import { Button, Card, Container, Grid, Image, Text } from '@nextui-org/react';
 import confetti from 'canvas-confetti';
 
 
-import { pokeApi,httpClient } from '../../api';
+import { pokeApi,httpClient,fetchClient } from '../../api';
 import { Layout } from '../../components/layouts';
 
 // import { Pokemon, PokemonListResponse } from '../../interfaces';
@@ -35,6 +35,8 @@ const PokemonByNamePage: NextPage<Props> = ({ blog }) => {
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   const {data} = await httpClient('/public/blogpost?page=1');
+  const response = await fetchClient("GET","public/blogpost?page=1");
+  console.log(response)
 
   return {
     paths: data?.blogsPosts?.map((e:any) => {
