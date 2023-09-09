@@ -35,7 +35,7 @@ const PokemonByNamePage: NextPage<Props> = ({ blog }) => {
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   // const {data} = await httpClient('/public/blogpost?page=1');
-  const response = await fetchClient("GET","public/blogpost?page=1");
+  const response = await fetchClient("GET","public/council/events");
   console.log(response)
 
   return {
