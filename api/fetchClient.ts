@@ -1,6 +1,6 @@
 async function fetchClient(method: any,url:any, ...otherParams:any) {
 
-    const baseURL = 'https://api-dev.hackinghrlab.io/'
+    const baseURL = 'http://communityeducationapi-dev-env.us-east-1.elasticbeanstalk.com/'
 
     const options = {
         ...otherParams,
